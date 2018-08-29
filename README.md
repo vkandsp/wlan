@@ -1,4 +1,7 @@
-program: unix domain datagram socket creation. 
+program: unix domain stream socket creation. 
+
+This program creates a socket in the UNIX domain and binds a name to it. After printing the socket's name it begins a loop. Each time through the loop it accepts a connection and prints out messages from it. When the connection breaks, or a termination message comes through, the program accepts a new connection
+
 
 **********Theory************
 
@@ -18,11 +21,11 @@ In addition to sending data, processes may send file descriptors across a Unix d
 
 example:
 #server side
-gcc unix_dg-ser.c -o ser
+gcc unix_st-ser.c -o ser
 ./ser /home/vaibhav/v
 
 #client side
-gcc unix_dg-cli.c -o cli
+gcc unix_st-cli.c -o cli
 ./cli /home/vaibhav/v
 
 
